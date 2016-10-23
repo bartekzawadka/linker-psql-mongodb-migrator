@@ -1,0 +1,15 @@
+{
+  "source":{
+    "username": "user",
+    "password": "pass",
+    "database": "linker_prod",
+    "host": "192.168.1.113",
+    "dialect": "postgres"
+  },
+  "destination":{
+    "username": "user",
+    "password": "pass",
+    "database": "linker",
+    "host": "host"
+  }
+}
