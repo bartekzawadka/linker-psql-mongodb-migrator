@@ -23,11 +23,21 @@ module.exports.migrate = function(finishedCallback){
                 include:{model: sourceModels.link, attributes:['link']}
             }).then(function(item){
 
+                var links = null;
+                if(item.links && item.links.length > 0){
+                    links = [];
+                    for(var k in item.links){
+                        links.push(item.links[k].dataValues.link);
+                    }
+                }
+
                 var Issue = new destIssue({
                     title: item.dataValues.title,
                     description: item.dataValues.description,
                     solveDate: item.dataValues.solveDate,
-                    links: item.links});
+                    createdAt: item.dataValues.createdAt,
+                    updatedAt: item.dataValues.updatedAt,
+                    links: links});
                 Issue.save(function(err){
                     if(err) {
                         failedCount++;
