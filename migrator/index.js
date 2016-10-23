@@ -5,7 +5,7 @@ var sourceModels = require('../models/source');
 var destIssue = require('../models/dest/issue');
 var async = require('async');
 
-module.exports.migrate = function(){
+module.exports.migrate = function(finishedCallback){
 
     sourceModels.issue.findAll({attributes:['id']}).then(function(res){
         var ids = [];
@@ -48,6 +48,9 @@ module.exports.migrate = function(){
             console.log('Migration finished.');
             console.log('Items migrated: '+succeededCount);
             console.log('Items failed: ' +failedCount);
+
+            if(finishedCallback)
+                finishedCallback();
         });
 
     });

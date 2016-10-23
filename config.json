@@ -7,9 +7,10 @@
     "dialect": "postgres"
   },
   "destination":{
-    "username": "user",
+    "username": "linker_user",
     "password": "pass",
     "database": "linker",
-    "host": "host"
+    "host": "host",
+    "collection": "Issues"
   }
 }
