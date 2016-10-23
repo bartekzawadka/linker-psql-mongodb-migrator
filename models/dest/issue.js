@@ -9,7 +9,7 @@ var issueSchema = mongoose.Schema({
     description:{type: String, default: ''},
     solveDate: {type: Date},
     createdAt:{type: Date, required: true},
-    updatedAt:{type: Date, required: true},
+    updateAt:{type: Date, required: true},
     links: {type: [String]}
 }, {collection: config.destination.collection});
 

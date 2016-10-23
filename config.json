@@ -1,16 +1,16 @@
 {
   "source":{
-    "username": "user",
-    "password": "pass",
+    "username": "linker_user",
+    "password": "d257be69",
     "database": "linker_prod",
     "host": "192.168.1.113",
     "dialect": "postgres"
   },
   "destination":{
     "username": "linker_user",
-    "password": "pass",
+    "password": "dba154",
     "database": "linker",
-    "host": "host",
+    "host": "esmeralda.westeurope.cloudapp.azure.com",
     "collection": "Issues"
   }
 }

@@ -21,8 +21,11 @@ sourceModels.sequelize.sync().then(function(){
       console.log('[INFO] app.js Connected to mongo server.');
 
       console.log('Starting migration...');
-      migrator.migrate(function(){
-         process.exit(0);
+      migrator.migrateIssues(function() {
+          migrator.migrateUsers(function () {
+              console.log('Job done. Exiting.');
+              process.exit(0);
+          });
       });
    });
 });
